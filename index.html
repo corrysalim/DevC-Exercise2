@@ -1,11 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Exercise 2</title>
-</head>
-<body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
-</body>
+<html>
+    <head>
+        <style>
+
+            @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+            body {
+                margin-top: 80px;
+                text-align: center;
+                font-family: Roboto;
+                background-color:  #F5F7FA;
+            }
+            button {
+                font-size: 14px;
+                color: #fff;
+                border-radius: 8px;
+                margin: 12px 8px 8px 8px;
+                border: none;
+                box-shadow: 0 1px 4px 0 rgba(0,0,0,0.15);
+                height: 48px;
+                width: 72px;
+            }
+            input {
+                border-radius: 8px;
+                border: none;
+                margin: 8px;
+                width: 300px;
+                height: 150px;
+                font-size: 56pt;
+                color: #808080;
+                box-shadow: 0 1px 4px 0 rgba(0,0,0,0.15);
+            }
+            h1 {
+                font-size: 40pt;
+                color: #808080;
+            }
+            h2 {
+                font-size: 56pt;
+                color: #808080;
+            }
+            #color-tambah{
+                background-color: #66CC88;
+            }
+            #color-kurang{
+                background-color: #E67373;
+            }
+            #color-bagi{
+                background-color: #6795F1;
+            }
+            #color-kali{
+                background-color: #F1B467;
+            }
+        </style>
+        <script>
+
+            function tambah (val1, val2) {
+                var hasil;
+                hasil = parseInt(val1) + parseInt(val2) ;
+                document.getElementById("hasil").innerHTML = hasil;
+            }
+            function kurang (val1, val2) {
+                var hasil;
+                hasil = parseInt(val1) - parseInt(val2) ;
+                document.getElementById("hasil").innerHTML = hasil;
+            }
+            function bagi (val1, val2) {
+                var hasil;
+                hasil = parseInt(val1) / parseInt(val2) ;
+                document.getElementById("hasil").innerHTML = hasil;
+            }
+            function kali (val1, val2) {
+                var hasil;
+                hasil = parseInt(val1) * parseInt(val2) ;
+                document.getElementById("hasil").innerHTML = hasil.toLocaleString();
+            }
+        </script>
+    </head>
+    <body>
+            <h1>Kalkulator Seadanya v0.01</h1>
+            <input type="number" id="bilangan1" placeholder="0"/>
+            <input type="number" id="bilangan2" placeholder="0"/>
+            <br>
+            <button id="color-tambah" onclick = tambah(bilangan1.value,bilangan2.value)>Tambah</button>
+            <button id="color-kurang" onclick = kurang(bilangan1.value,bilangan2.value)>Kurang</button>
+            <button id="color-bagi" onclick = bagi(bilangan1.value,bilangan2.value)>Bagi</button>
+            <button id="color-kali" onclick = kali(bilangan1.value,bilangan2.value)>Kali</button>
+            <br>
+            <h2 id="hasil">0</h2>
+    </body>
 </html>
